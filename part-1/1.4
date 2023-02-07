@@ -1,0 +1,26 @@
+docker run -it -d --rm ubuntu
+028680c6cc62ffe0c04bfbdbfd997a4591ec47ff6654eadf32e5451dbb196814
+
+docker exec -it youthful_vaughan sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+Input website:
+helsinki.fi
+Searching..
+sh: 1: curl: not found
+
+docker exec -it 028680c6cc62ffe0c04bfbdbfd997a4591ec47ff6654eadf32e5451dbb196814 /bin/sh
+
+apt-get -qq -y install curl
+
+// exited terminal here, opened new shell
+
+docker exec -it youthful_vaughan sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+Input website:
+helsinki.fi
+Searching..
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.20.1</center>
+</body>
+</html>
